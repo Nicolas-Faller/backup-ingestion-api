@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BackupIngestion.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c4ada08f9e59507c7836f62a9772ceb15517e93")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+708d4f8e09f271e985e5228055abab651318c6a5")]
 [assembly: System.Reflection.AssemblyProductAttribute("BackupIngestion.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BackupIngestion.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

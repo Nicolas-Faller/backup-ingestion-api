@@ -11,13 +11,16 @@ public class ImportController : ControllerBase
 {
   private readonly IJsonBackupImportService _jsonBackupImportService;
   private readonly ICsvBackupImportService _csvBackupImportService;
+  private readonly IHtmlBackupImportService _htmlBackupImportService;
 
   public ImportController(
       IJsonBackupImportService jsonBackupImportService,
-      ICsvBackupImportService csvBackupImportService)
+      ICsvBackupImportService csvBackupImportService,
+      IHtmlBackupImportService htmlBackupImportService)
   {
     _jsonBackupImportService = jsonBackupImportService;
     _csvBackupImportService = csvBackupImportService;
+    _htmlBackupImportService = htmlBackupImportService;
   }
 
   [HttpPost("json")]
@@ -66,5 +69,29 @@ public class ImportController : ControllerBase
     var result = await _csvBackupImportService.ImportAsync(csvContent, cancellationToken);
 
     return Ok(new ImportCsvBackupsResponse(result.ImportedCount));
+  }
+
+  [HttpPost("html")]
+  [Consumes("multipart/form-data")]
+  [ProducesResponseType(typeof(ImportHtmlBackupsResponse), StatusCodes.Status200OK)]
+  [ProducesResponseType(StatusCodes.Status400BadRequest)]
+  public async Task<IActionResult> ImportHtml(
+      [FromForm] ImportHtmlFileRequest request,
+      CancellationToken cancellationToken)
+  {
+    if (request.File is null || request.File.Length == 0)
+      return BadRequest("An HTML file must be provided.");
+
+    string htmlContent;
+
+    using (var stream = request.File.OpenReadStream())
+    using (var reader = new StreamReader(stream))
+    {
+      htmlContent = await reader.ReadToEndAsync();
+    }
+
+    var result = await _htmlBackupImportService.ImportAsync(htmlContent, cancellationToken);
+
+    return Ok(new ImportHtmlBackupsResponse(result.ImportedCount));
   }
 }

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Backup Executions</title>
+  </head>
+  <body>
+    <table id="backup-executions">
+      <thead>
+        <tr>
+          <th>ClientName</th>
+          <th>JobName</th>
+          <th>Status</th>
+          <th>StartedAtUtc</th>
+          <th>FinishedAtUtc</th>
+          <th>DurationSeconds</th>
+          <th>DataSizeBytes</th>
+          <th>BackupSizeBytes</th>
+          <th>TransferredSizeBytes</th>
+          <th>Message</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Wayne Enterprises</td>
+          <td>Hyper-V Nightly Backup</td>
+          <td>Success</td>
+          <td>2026-03-17T05:00:00Z</td>
+          <td>2026-03-17T05:14:00Z</td>
+          <td>840</td>
+          <td>12884901888</td>
+          <td>6442450944</td>
+          <td>3221225472</td>
+          <td>Backup completed successfully</td>
+        </tr>
+        <tr>
+          <td>Stark Industries</td>
+          <td>Exchange Backup</td>
+          <td>Warning</td>
+          <td>2026-03-17T06:00:00Z</td>
+          <td>2026-03-17T06:07:30Z</td>
+          <td>450</td>
+          <td>3221225472</td>
+          <td>2147483648</td>
+          <td>1073741824</td>
+          <td>High latency detected during transfer</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
