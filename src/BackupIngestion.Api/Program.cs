@@ -12,6 +12,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddScoped<IJsonBackupImportService, JsonBackupImportService>();
+builder.Services.AddScoped<ICsvBackupImportService, CsvBackupImportService>();
 
 var app = builder.Build();
 

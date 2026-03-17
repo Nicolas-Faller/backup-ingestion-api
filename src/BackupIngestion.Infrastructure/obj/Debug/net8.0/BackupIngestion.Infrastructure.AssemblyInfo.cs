@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BackupIngestion.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+137719c00348bb4fa2129f029d48c3dc3f653d46")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c4ada08f9e59507c7836f62a9772ceb15517e93")]
 [assembly: System.Reflection.AssemblyProductAttribute("BackupIngestion.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BackupIngestion.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

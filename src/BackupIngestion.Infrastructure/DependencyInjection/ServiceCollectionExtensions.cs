@@ -1,5 +1,6 @@
 using BackupIngestion.Application.Abstractions.Parsing;
 using BackupIngestion.Application.Abstractions.Persistence;
+using BackupIngestion.Infrastructure.Parsers.Csv;
 using BackupIngestion.Infrastructure.Parsers.Json;
 using BackupIngestion.Infrastructure.Persistence;
 using BackupIngestion.Infrastructure.Persistence.Repositories;
@@ -21,6 +22,7 @@ public static class ServiceCollectionExtensions
 
     services.AddScoped<IBackupExecutionRepository, BackupExecutionRepository>();
     services.AddScoped<IJsonBackupParser, JsonBackupParser>();
+    services.AddScoped<ICsvBackupParser, CsvBackupParser>();
 
     return services;
   }

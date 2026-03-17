@@ -10,10 +10,14 @@ namespace BackupIngestion.Api.Controllers;
 public class ImportController : ControllerBase
 {
   private readonly IJsonBackupImportService _jsonBackupImportService;
+  private readonly ICsvBackupImportService _csvBackupImportService;
 
-  public ImportController(IJsonBackupImportService jsonBackupImportService)
+  public ImportController(
+      IJsonBackupImportService jsonBackupImportService,
+      ICsvBackupImportService csvBackupImportService)
   {
     _jsonBackupImportService = jsonBackupImportService;
+    _csvBackupImportService = csvBackupImportService;
   }
 
   [HttpPost("json")]
@@ -38,5 +42,29 @@ public class ImportController : ControllerBase
     var result = await _jsonBackupImportService.ImportAsync(jsonContent, cancellationToken);
 
     return Ok(new ImportJsonBackupsResponse(result.ImportedCount));
+  }
+
+  [HttpPost("csv")]
+  [Consumes("multipart/form-data")]
+  [ProducesResponseType(typeof(ImportCsvBackupsResponse), StatusCodes.Status200OK)]
+  [ProducesResponseType(StatusCodes.Status400BadRequest)]
+  public async Task<IActionResult> ImportCsv(
+      [FromForm] ImportCsvFileRequest request,
+      CancellationToken cancellationToken)
+  {
+    if (request.File is null || request.File.Length == 0)
+      return BadRequest("A CSV file must be provided.");
+
+    string csvContent;
+
+    using (var stream = request.File.OpenReadStream())
+    using (var reader = new StreamReader(stream))
+    {
+      csvContent = await reader.ReadToEndAsync();
+    }
+
+    var result = await _csvBackupImportService.ImportAsync(csvContent, cancellationToken);
+
+    return Ok(new ImportCsvBackupsResponse(result.ImportedCount));
   }
 }
