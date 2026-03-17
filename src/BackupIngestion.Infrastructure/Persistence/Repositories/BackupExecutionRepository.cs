@@ -19,39 +19,26 @@ public class BackupExecutionRepository : IBackupExecutionRepository
     await _context.BackupExecutions.AddRangeAsync(executions, cancellationToken);
   }
 
+  public async Task<IReadOnlyList<BackupExecution>> ListAsync(
+      BackupSearchParamsDto searchParams,
+      CancellationToken cancellationToken = default)
+  {
+    var query = ApplyFilters(
+        _context.BackupExecutions.AsNoTracking(),
+        searchParams);
+
+    return await query
+        .OrderByDescending(x => x.StartedAtUtc)
+        .ToListAsync(cancellationToken);
+  }
+
   public async Task<PagedResultDto<BackupExecution>> SearchAsync(
       BackupSearchParamsDto searchParams,
       CancellationToken cancellationToken = default)
   {
-    var query = _context.BackupExecutions
-        .AsNoTracking()
-        .AsQueryable();
-
-    if (!string.IsNullOrWhiteSpace(searchParams.ClientName))
-    {
-      var clientName = searchParams.ClientName.Trim();
-      query = query.Where(x => x.ClientName.Contains(clientName));
-    }
-
-    if (searchParams.Status.HasValue)
-    {
-      query = query.Where(x => x.Status == searchParams.Status.Value);
-    }
-
-    if (searchParams.SourceType.HasValue)
-    {
-      query = query.Where(x => x.SourceType == searchParams.SourceType.Value);
-    }
-
-    if (searchParams.StartDate.HasValue)
-    {
-      query = query.Where(x => x.StartedAtUtc >= searchParams.StartDate.Value);
-    }
-
-    if (searchParams.EndDate.HasValue)
-    {
-      query = query.Where(x => x.StartedAtUtc <= searchParams.EndDate.Value);
-    }
+    var query = ApplyFilters(
+        _context.BackupExecutions.AsNoTracking(),
+        searchParams);
 
     var totalCount = await query.CountAsync(cancellationToken);
 
@@ -134,5 +121,38 @@ public class BackupExecutionRepository : IBackupExecutionRepository
   public Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
   {
     return _context.SaveChangesAsync(cancellationToken);
+  }
+
+  private static IQueryable<BackupExecution> ApplyFilters(
+      IQueryable<BackupExecution> query,
+      BackupSearchParamsDto searchParams)
+  {
+    if (!string.IsNullOrWhiteSpace(searchParams.ClientName))
+    {
+      var clientName = searchParams.ClientName.Trim();
+      query = query.Where(x => x.ClientName.Contains(clientName));
+    }
+
+    if (searchParams.Status.HasValue)
+    {
+      query = query.Where(x => x.Status == searchParams.Status.Value);
+    }
+
+    if (searchParams.SourceType.HasValue)
+    {
+      query = query.Where(x => x.SourceType == searchParams.SourceType.Value);
+    }
+
+    if (searchParams.StartDate.HasValue)
+    {
+      query = query.Where(x => x.StartedAtUtc >= searchParams.StartDate.Value);
+    }
+
+    if (searchParams.EndDate.HasValue)
+    {
+      query = query.Where(x => x.StartedAtUtc <= searchParams.EndDate.Value);
+    }
+
+    return query;
   }
 }

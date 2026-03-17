@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BackupIngestion.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+708d4f8e09f271e985e5228055abab651318c6a5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7b45ff03ec920396af5600842da349d57c4001e0")]
 [assembly: System.Reflection.AssemblyProductAttribute("BackupIngestion.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BackupIngestion.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -7,6 +7,10 @@ public interface IBackupExecutionRepository
 {
   Task AddRangeAsync(IEnumerable<BackupExecution> executions, CancellationToken cancellationToken = default);
 
+  Task<IReadOnlyList<BackupExecution>> ListAsync(
+      BackupSearchParamsDto searchParams,
+      CancellationToken cancellationToken = default);
+
   Task<PagedResultDto<BackupExecution>> SearchAsync(
       BackupSearchParamsDto searchParams,
       CancellationToken cancellationToken = default);

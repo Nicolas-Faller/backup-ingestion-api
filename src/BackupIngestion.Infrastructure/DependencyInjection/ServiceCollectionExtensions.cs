@@ -1,5 +1,7 @@
 using BackupIngestion.Application.Abstractions.Parsing;
 using BackupIngestion.Application.Abstractions.Persistence;
+using BackupIngestion.Application.Abstractions.Services;
+using BackupIngestion.Infrastructure.Exports.Excel;
 using BackupIngestion.Infrastructure.Parsers.Csv;
 using BackupIngestion.Infrastructure.Parsers.Html;
 using BackupIngestion.Infrastructure.Parsers.Json;
@@ -25,6 +27,7 @@ public static class ServiceCollectionExtensions
     services.AddScoped<IJsonBackupParser, JsonBackupParser>();
     services.AddScoped<ICsvBackupParser, CsvBackupParser>();
     services.AddScoped<IHtmlBackupParser, HtmlBackupParser>();
+    services.AddScoped<IBackupExcelExportService, BackupExcelExportService>();
 
     return services;
   }
