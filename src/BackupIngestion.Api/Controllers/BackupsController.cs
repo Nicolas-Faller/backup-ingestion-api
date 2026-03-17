@@ -1,6 +1,8 @@
+using BackupIngestion.Api.Contracts.Requests;
 using BackupIngestion.Api.Contracts.Responses;
 using BackupIngestion.Application.Abstractions.Persistence;
 using BackupIngestion.Application.DTOs;
+using BackupIngestion.Domain.Enums;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BackupIngestion.Api.Controllers;
@@ -17,12 +19,42 @@ public class BackupsController : ControllerBase
   }
 
   [HttpGet]
-  [ProducesResponseType(typeof(IEnumerable<BackupExecutionResponse>), StatusCodes.Status200OK)]
-  public async Task<IActionResult> GetAll(CancellationToken cancellationToken)
+  [ProducesResponseType(typeof(PagedResponse<BackupExecutionResponse>), StatusCodes.Status200OK)]
+  [ProducesResponseType(StatusCodes.Status400BadRequest)]
+  public async Task<IActionResult> GetAll(
+      [FromQuery] GetBackupsRequest request,
+      CancellationToken cancellationToken)
   {
-    var items = await _repository.GetAllAsync(cancellationToken);
+    BackupStatus? status = null;
+    if (!string.IsNullOrWhiteSpace(request.Status))
+    {
+      if (!Enum.TryParse<BackupStatus>(request.Status, true, out var parsedStatus))
+        return BadRequest("Invalid status. Use: Success, Warning, Failed, Running or Unknown.");
 
-    var response = items
+      status = parsedStatus;
+    }
+
+    SourceType? sourceType = null;
+    if (!string.IsNullOrWhiteSpace(request.SourceType))
+    {
+      if (!Enum.TryParse<SourceType>(request.SourceType, true, out var parsedSourceType))
+        return BadRequest("Invalid sourceType. Use: Json, Csv or Html.");
+
+      sourceType = parsedSourceType;
+    }
+
+    var searchParams = new BackupSearchParamsDto(
+        request.ClientName,
+        status,
+        sourceType,
+        request.StartDate,
+        request.EndDate,
+        request.Page,
+        request.PageSize);
+
+    var result = await _repository.SearchAsync(searchParams, cancellationToken);
+
+    var items = result.Items
         .Select(BackupExecutionDto.FromEntity)
         .Select(x => new BackupExecutionResponse(
             x.Id,
@@ -39,6 +71,13 @@ public class BackupsController : ControllerBase
             x.Message,
             x.ImportedAtUtc))
         .ToList();
+
+    var response = new PagedResponse<BackupExecutionResponse>(
+        items,
+        result.TotalCount,
+        result.Page,
+        result.PageSize,
+        result.TotalPages);
 
     return Ok(response);
   }

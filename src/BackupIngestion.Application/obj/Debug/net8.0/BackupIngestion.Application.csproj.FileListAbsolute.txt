@@ -13,3 +13,4 @@
 /home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Application/obj/Debug/net8.0/refint/BackupIngestion.Application.dll
 /home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Application/obj/Debug/net8.0/BackupIngestion.Application.pdb
 /home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Application/obj/Debug/net8.0/ref/BackupIngestion.Application.dll
+/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Application/obj/Debug/net8.0/BackupIngestion.Application.sourcelink.json

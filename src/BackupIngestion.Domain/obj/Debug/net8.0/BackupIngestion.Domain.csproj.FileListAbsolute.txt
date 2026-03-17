@@ -9,3 +9,4 @@
 /home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Domain/obj/Debug/net8.0/refint/BackupIngestion.Domain.dll
 /home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Domain/obj/Debug/net8.0/BackupIngestion.Domain.pdb
 /home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Domain/obj/Debug/net8.0/ref/BackupIngestion.Domain.dll
+/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Domain/obj/Debug/net8.0/BackupIngestion.Domain.sourcelink.json

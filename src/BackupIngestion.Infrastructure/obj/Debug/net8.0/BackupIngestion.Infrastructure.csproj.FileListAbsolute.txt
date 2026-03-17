@@ -17,3 +17,4 @@
 /home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Infrastructure/obj/Debug/net8.0/BackupIngestion.Infrastructure.pdb
 /home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Infrastructure/obj/Debug/net8.0/BackupIngestion.Infrastructure.genruntimeconfig.cache
 /home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Infrastructure/obj/Debug/net8.0/ref/BackupIngestion.Infrastructure.dll
+/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Infrastructure/obj/Debug/net8.0/BackupIngestion.Infrastructure.sourcelink.json

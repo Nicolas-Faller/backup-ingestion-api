@@ -102,3 +102,4 @@
 /home/nicolas/Documents/backup-ingestion-api/tests/BackupIngestion.UnitTests/obj/Debug/net8.0/BackupIngestion.UnitTests.pdb
 /home/nicolas/Documents/backup-ingestion-api/tests/BackupIngestion.UnitTests/obj/Debug/net8.0/BackupIngestion.UnitTests.genruntimeconfig.cache
 /home/nicolas/Documents/backup-ingestion-api/tests/BackupIngestion.UnitTests/obj/Debug/net8.0/ref/BackupIngestion.UnitTests.dll
+/home/nicolas/Documents/backup-ingestion-api/tests/BackupIngestion.UnitTests/obj/Debug/net8.0/BackupIngestion.UnitTests.sourcelink.json
