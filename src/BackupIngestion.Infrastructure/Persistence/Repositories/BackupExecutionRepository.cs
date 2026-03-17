@@ -68,6 +68,62 @@ public class BackupExecutionRepository : IBackupExecutionRepository
         searchParams.PageSize);
   }
 
+  public async Task<BackupSummaryDto> GetSummaryAsync(CancellationToken cancellationToken = default)
+  {
+    var baseQuery = _context.BackupExecutions.AsNoTracking();
+
+    var totalBackups = await baseQuery.CountAsync(cancellationToken);
+
+    var totalClients = await baseQuery
+        .Select(x => x.ClientName)
+        .Distinct()
+        .CountAsync(cancellationToken);
+
+    var totalTransferredBytes = totalBackups == 0
+        ? 0
+        : await baseQuery.SumAsync(x => x.TransferredSizeBytes, cancellationToken);
+
+    var averageDurationSeconds = totalBackups == 0
+        ? 0
+        : await baseQuery.AverageAsync(x => x.DurationSeconds, cancellationToken);
+
+    var statusCountsRaw = await baseQuery
+        .GroupBy(x => x.Status)
+        .Select(g => new
+        {
+          Status = g.Key,
+          Count = g.Count()
+        })
+        .OrderBy(x => x.Status)
+        .ToListAsync(cancellationToken);
+
+    var sourceTypeCountsRaw = await baseQuery
+        .GroupBy(x => x.SourceType)
+        .Select(g => new
+        {
+          SourceType = g.Key,
+          Count = g.Count()
+        })
+        .OrderBy(x => x.SourceType)
+        .ToListAsync(cancellationToken);
+
+    var statusCounts = statusCountsRaw
+        .Select(x => new StatusCountDto(x.Status.ToString(), x.Count))
+        .ToList();
+
+    var sourceTypeCounts = sourceTypeCountsRaw
+        .Select(x => new SourceTypeCountDto(x.SourceType.ToString(), x.Count))
+        .ToList();
+
+    return new BackupSummaryDto(
+        totalBackups,
+        totalClients,
+        totalTransferredBytes,
+        averageDurationSeconds,
+        statusCounts,
+        sourceTypeCounts);
+  }
+
   public async Task<BackupExecution?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
   {
     return await _context.BackupExecutions

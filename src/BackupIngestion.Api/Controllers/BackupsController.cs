@@ -82,6 +82,27 @@ public class BackupsController : ControllerBase
     return Ok(response);
   }
 
+  [HttpGet("summary")]
+  [ProducesResponseType(typeof(BackupSummaryResponse), StatusCodes.Status200OK)]
+  public async Task<IActionResult> GetSummary(CancellationToken cancellationToken)
+  {
+    var summary = await _repository.GetSummaryAsync(cancellationToken);
+
+    var response = new BackupSummaryResponse(
+        summary.TotalBackups,
+        summary.TotalClients,
+        summary.TotalTransferredBytes,
+        summary.AverageDurationSeconds,
+        summary.StatusCounts
+            .Select(x => new StatusCountResponse(x.Status, x.Count))
+            .ToList(),
+        summary.SourceTypeCounts
+            .Select(x => new SourceTypeCountResponse(x.SourceType, x.Count))
+            .ToList());
+
+    return Ok(response);
+  }
+
   [HttpGet("{id:guid}")]
   [ProducesResponseType(typeof(BackupExecutionResponse), StatusCodes.Status200OK)]
   [ProducesResponseType(StatusCodes.Status404NotFound)]
