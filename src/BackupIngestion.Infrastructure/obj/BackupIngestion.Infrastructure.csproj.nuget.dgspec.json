@@ -1,0 +1,206 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Infrastructure/BackupIngestion.Infrastructure.csproj": {}
+  },
+  "projects": {
+    "/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Application/BackupIngestion.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Application/BackupIngestion.Application.csproj",
+        "projectName": "BackupIngestion.Application",
+        "projectPath": "/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Application/BackupIngestion.Application.csproj",
+        "packagesPath": "/home/nicolas/.nuget/packages/",
+        "outputPath": "/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/nicolas/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Domain/BackupIngestion.Domain.csproj": {
+                "projectPath": "/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Domain/BackupIngestion.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.125/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Domain/BackupIngestion.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Domain/BackupIngestion.Domain.csproj",
+        "projectName": "BackupIngestion.Domain",
+        "projectPath": "/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Domain/BackupIngestion.Domain.csproj",
+        "packagesPath": "/home/nicolas/.nuget/packages/",
+        "outputPath": "/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/nicolas/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.125/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Infrastructure/BackupIngestion.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Infrastructure/BackupIngestion.Infrastructure.csproj",
+        "projectName": "BackupIngestion.Infrastructure",
+        "projectPath": "/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Infrastructure/BackupIngestion.Infrastructure.csproj",
+        "packagesPath": "/home/nicolas/.nuget/packages/",
+        "outputPath": "/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/nicolas/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Application/BackupIngestion.Application.csproj": {
+                "projectPath": "/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Application/BackupIngestion.Application.csproj"
+              },
+              "/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Domain/BackupIngestion.Domain.csproj": {
+                "projectPath": "/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Domain/BackupIngestion.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "ClosedXML": {
+              "target": "Package",
+              "version": "[0.104.2, )"
+            },
+            "CsvHelper": {
+              "target": "Package",
+              "version": "[33.1.0, )"
+            },
+            "HtmlAgilityPack": {
+              "target": "Package",
+              "version": "[1.11.71, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.11, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.125/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

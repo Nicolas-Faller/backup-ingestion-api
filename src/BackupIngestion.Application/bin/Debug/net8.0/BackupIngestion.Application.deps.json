@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "BackupIngestion.Application/1.0.0": {
+        "dependencies": {
+          "BackupIngestion.Domain": "1.0.0"
+        },
+        "runtime": {
+          "BackupIngestion.Application.dll": {}
+        }
+      },
+      "BackupIngestion.Domain/1.0.0": {
+        "runtime": {
+          "BackupIngestion.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BackupIngestion.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BackupIngestion.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

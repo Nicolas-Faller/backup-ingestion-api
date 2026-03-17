@@ -1,0 +1,15 @@
+/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Application/bin/Debug/net8.0/BackupIngestion.Application.deps.json
+/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Application/bin/Debug/net8.0/BackupIngestion.Application.dll
+/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Application/bin/Debug/net8.0/BackupIngestion.Application.pdb
+/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Application/bin/Debug/net8.0/BackupIngestion.Domain.dll
+/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Application/bin/Debug/net8.0/BackupIngestion.Domain.pdb
+/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Application/obj/Debug/net8.0/BackupIngestion.Application.csproj.AssemblyReference.cache
+/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Application/obj/Debug/net8.0/BackupIngestion.Application.GeneratedMSBuildEditorConfig.editorconfig
+/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Application/obj/Debug/net8.0/BackupIngestion.Application.AssemblyInfoInputs.cache
+/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Application/obj/Debug/net8.0/BackupIngestion.Application.AssemblyInfo.cs
+/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Application/obj/Debug/net8.0/BackupIngestion.Application.csproj.CoreCompileInputs.cache
+/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Application/obj/Debug/net8.0/BackupIngestion.Application.csproj.CopyComplete
+/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Application/obj/Debug/net8.0/BackupIngestion.Application.dll
+/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Application/obj/Debug/net8.0/refint/BackupIngestion.Application.dll
+/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Application/obj/Debug/net8.0/BackupIngestion.Application.pdb
+/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Application/obj/Debug/net8.0/ref/BackupIngestion.Application.dll

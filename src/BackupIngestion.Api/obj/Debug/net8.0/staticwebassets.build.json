@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "NZ7DB15tk5QZ3H2m7m17GuWotmtbRG5L2L24CDqxXhY=",
+  "Source": "BackupIngestion.Api",
+  "BasePath": "_content/BackupIngestion.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

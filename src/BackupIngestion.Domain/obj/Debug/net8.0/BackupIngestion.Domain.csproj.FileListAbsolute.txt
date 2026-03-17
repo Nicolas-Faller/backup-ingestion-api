@@ -1,0 +1,11 @@
+/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Domain/bin/Debug/net8.0/BackupIngestion.Domain.deps.json
+/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Domain/bin/Debug/net8.0/BackupIngestion.Domain.dll
+/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Domain/bin/Debug/net8.0/BackupIngestion.Domain.pdb
+/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Domain/obj/Debug/net8.0/BackupIngestion.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Domain/obj/Debug/net8.0/BackupIngestion.Domain.AssemblyInfoInputs.cache
+/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Domain/obj/Debug/net8.0/BackupIngestion.Domain.AssemblyInfo.cs
+/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Domain/obj/Debug/net8.0/BackupIngestion.Domain.csproj.CoreCompileInputs.cache
+/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Domain/obj/Debug/net8.0/BackupIngestion.Domain.dll
+/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Domain/obj/Debug/net8.0/refint/BackupIngestion.Domain.dll
+/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Domain/obj/Debug/net8.0/BackupIngestion.Domain.pdb
+/home/nicolas/Documents/backup-ingestion-api/src/BackupIngestion.Domain/obj/Debug/net8.0/ref/BackupIngestion.Domain.dll
